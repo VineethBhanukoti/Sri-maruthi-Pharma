@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services</title>
+    <link rel="stylesheet" href="pharma.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+    .fa {
+      padding: 10px;
+      font-size: 35px;
+      width: 25px;
+      height:25px;
+      text-align: center;
+      text-decoration:cyan;
+      margin: 5px 2px;
+      align-items: center;
+    }
+    
+    .fa:hover {
+        opacity: 0.7;
+    }
+    
+    .fa-whatsapp{
+        background: rgb(33, 185, 33);
+        color: white;
+        border-radius: 50%;
+        text-align: center;
+        align-items: center;
+        padding-top: 0.1px;
+        padding-left: 1px;
+        padding-right: 2.5px;
+        padding-bottom: 3.5px;
+    }
+    .drug
+    {
+        height: 120px;
+        width: 150px;
+        padding-top: 10px;
+        padding-bottom:5px;
+    }
+ </style>  
+</head>
+<body>
+        <div class = "navbar" style="background-color: rgb(2, 2, 46);background-size: 100%;">
+        <ul>
+            <li><br> <a href ="#" onclick="fff()">Home</a></li>
+            <li> <a href ="#">Services</a></li>
+            <li> <a href ="#" onclick="mmm()">ContactUs</a></li>
+            <li> <a href ="#" onclick="jjj()">AboutUs</a></li>
+        </ul></div>
+        <h3 style="color: white;font-size: xx-large;text-align: center;"><br>Our Inventory</h3>
+        <div>
+            <h3 id="invoice" style="color: white;font-size: xx-medium;padding-top: 50px;padding-left: 50px;">Invoice Nummber: </h3>
+        </div>
+        <div class="box-container">
+            <div class="box">
+                <div class="icon">
+                    <i class="fas fa-tablets"></i>
+                </div>
+                <h2 class="title" style="padding-top: 0;">Dolo650</h2>
+                <img src = "dolo_650_1.jpg" class="drug"><br>
+                <input type="number" min="0" placeholder="Qty." id="D0" style="width: 60px;height: 20px;border-radius:12px;padding-left: 10px;"onchange="invoice('D0')"> x 100
+            </div>
+            <div class="box">
+                <div class="icon">
+                    <span class="fas fa-tablets"></span>
+                </div>
+                    <h2 class="title" style="padding-top: 0;">Crocin 650</h2>
+                    <img src = "cro0023.jpg" class="drug"><br>
+                    <input type="number" min="0" placeholder="Qty." id="C0" style="width: 60px;height: 20px;border-radius:12px;padding-left: 10px;" onchange="invoice('C0')"> x 150
+            </div>
+            <div class="box">
+                    <div class="icon">
+                        <span class="fas fa-tablets"></span>
+                    </div>
+                <h2 class="title" style="padding-top: 0;">Rasayanam</h2>
+                <img src = "rasayanam.jpg" class="drug"><br>
+                <input type="number" min="0" placeholder="Qty." id="R0" style="width: 60px;height: 20px;border-radius:12px;padding-left: 10px;"onchange="invoice('R0')"> x 50    
+                </div>
+                    <div class="box">
+                        <div class="icon">
+                            <span class="fas fa-tablets"></span>
+                        </div>
+                        <h2 class="title" style="padding-top: 0;">AyurDefence</h2>
+                    <img src = "tablet.jpg" class="drug"><br>
+                    <input type="number" min="0" id="AD"placeholder="Qty." style="width: 60px;height: 20px;border-radius:12px;padding-left: 10px;"onchange="invoice('AD')"> x 100
+                       </div>
+        </div>
+        
+        <footer style="padding-top:18%;">
+            <h4 style="color:rgb(245, 181, 45); font-size: medium;left: 10px;background-color: black;text-align: center;padding: 2%;">Send the Invoice number to the whatsapp number with your address to get delivery &nbsp Chat With Us:   <a href="#" class="fa fa-whatsapp"></a>6384437107 </h4>     
+        </footer>
+    
+                            
+    <script>
+        var inventory={A0:0,A1:0,A2:0,A3:0,A4:0};
+        function fff(){
+            document.location.href="index.html";
+        }
+        function jjj(){
+            document.location.href="aboutus.html";
+        }
+        function mmm(){
+            document.location.href="contactus.html";
+        }
+        function invoice(inputid)
+        {
+            var invoice_number = "";
+            var qty=document.getElementById(inputid).value;
+            inventory[inputid]=qty;
+            for (let k in inventory) 
+                if(inventory[k]>0)
+                    invoice_number=invoice_number+k.toString()+inventory[k].toString();
+            document.getElementById("invoice").innerHTML="Invoice Nummber: "+invoice_number;
+        }
+    </script>
+</body>
+</html>
